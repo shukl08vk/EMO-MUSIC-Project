@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include Resource Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="static/examples/resources/css/foundation.min.css"/>
+
+		<!-- 
+			Include Resource Javascript 
+		
+			NOTE: These are for handling things outside of the scope of AmplitudeJS
+		-->
+		<script type="text/javascript" src="static/examples/resources/js/jquery.js"></script>
+		<script type="text/javascript" src="static/examples/resources/js/foundation.min.js"></script>
+
+		<!-- Include Amplitude JS -->
+		<script type="text/javascript" src="static/dist/amplitude.js"></script>
+
+		<!-- 
+			Include UX functions JS 
+
+			NOTE: These are for handling things outside of the scope of AmplitudeJS
+		-->
+		<script type="text/javascript" src="static/examples/blue-playlist/js/functions.js"></script>
+
+		<!-- Include Style Sheet -->
+		<link rel="stylesheet" type="text/css" href="static/examples/blue-playlist/css/styles.css"/>
+    
+    </head>
+<body>
+              <div class="row">
+                  
+			<div class="large-8 medium-10 small-11 large-centered medium-centered small-centered columns" id="amplitude-player">
+				<div class="row">
+					<div class="large-6 medium-6 small-12 columns" id="amplitude-left">
+						<img amplitude-song-info="cover_art_url" amplitude-main-song-info="true"/>
+						<div id="player-left-bottom">
+							<div id="time-container">
+								<span class="current-time">
+									<span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+								</span>
+								<input type="range" class="amplitude-song-slider" amplitude-main-song-slider="true"/>
+								<span class="duration">
+									<span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+								</span>
+							</div>
+
+							<div id="control-container">
+								<div id="repeat-container">
+									<div class="amplitude-repeat" id="repeat"></div>
+								</div>
+							
+								<div id="central-control-container">
+									<div id="central-controls">
+										<div class="amplitude-prev" id="previous"></div>
+										<div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
+										<div class="amplitude-next" id="next"></div>
+									</div>
+								</div>
+								
+								<div id="shuffle-container">
+									<div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle"></div>
+								</div>
+							</div>
+							
+							<div id="meta-container">
+								<span amplitude-song-info="name" amplitude-main-song-info="true" class="song-name"></span>
+								
+								<div class="song-artist-album">
+									<span amplitude-song-info="artist" amplitude-main-song-info="true"></span>
+									<span amplitude-song-info="album" amplitude-main-song-info="true"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="large-6 medium-6 small-12 columns" id="amplitude-right">
+						<div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="0">
+							<div class="song-now-playing-icon-container">
+								<div class="play-button-container">
+
+								</div>
+								<img class="now-playing" src="examples/blue-playlist/img/now-playing.svg"/>
+							</div>
+							<div class="song-meta-data">
+								<span class="song-title">Risin' High (feat Raashan Ahmad)</span>
+								<span class="song-artist">Ancient Astronauts</span>
+							</div>
+							<a href="https://switchstancerecordings.bandcamp.com/track/risin-high-feat-raashan-ahmad" class="bandcamp-link" target="_blank">
+								<img class="bandcamp-grey" src="static/examples/blue-playlist/img/bandcamp-grey.svg"/>
+								<img class="bandcamp-white" src="static/examples/blue-playlist/img/bandcamp-white.svg"/>
+							</a>
+							<span class="song-duration">3:30</span>
+						</div>
+						<div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="1">
+							<div class="song-now-playing-icon-container">
+								<div class="play-button-container">
+
+								</div>
+								<img class="now-playing" src="static/examples/blue-playlist/img/now-playing.svg"/>
+							</div>
+							<div class="song-meta-data">
+								<span class="song-title">The Gun</span>
+								<span class="song-artist">Lorn</span>
+							</div>
+							<a href="https://lorn.bandcamp.com/" class="bandcamp-link" target="_blank">
+								<img class="bandcamp-grey" src="static/examples/blue-playlist/img/bandcamp-grey.svg"/>
+								<img class="bandcamp-white" src="static/examples/blue-playlist/img/bandcamp-white.svg"/>
+							</a>
+							<span class="song-duration">3:16</span>
+						</div>
+						<div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="2">
+							<div class="song-now-playing-icon-container">
+								<div class="play-button-container">
+
+								</div>
+								<img class="now-playing" src="static/examples/blue-playlist/img/now-playing.svg"/>
+							</div>
+							<div class="song-meta-data">
+								<span class="song-title">Anvil</span>
+								<span class="song-artist">Lorn</span>
+							</div>
+							<a href="https://lorn.bandcamp.com/" class="bandcamp-link" target="_blank">
+								<img class="bandcamp-grey" src="static/examples/blue-playlist/img/bandcamp-grey.svg"/>
+								<img class="bandcamp-white" src="static/examples/blue-playlist/img/bandcamp-white.svg"/>
+							</a>
+							<span class="song-duration">3:32</span>
+						</div>
+						<div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="3">
+							<div class="song-now-playing-icon-container">
+								<div class="play-button-container">
+
+								</div>
+								<img class="now-playing" src="static/examples/blue-playlist/img/now-playing.svg"/>
+							</div>
+							<div class="song-meta-data">
+								<span class="song-title">I Came Running</span>
+								<span class="song-artist">Ancient Astronauts</span>
+							</div>
+							<a href="https://switchstancerecordings.bandcamp.com/track/i-came-running" class="bandcamp-link" target="_blank">
+								<img class="bandcamp-grey" src="static/examples/blue-playlist/img/bandcamp-grey.svg"/>
+								<img class="bandcamp-white" src="static/examples/blue-playlist/img/bandcamp-white.svg"/>
+							</a>
+							<span class="song-duration">3:30</span>
+						</div>
+						<div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="4">
+							<div class="song-now-playing-icon-container">
+								<div class="play-button-container">
+
+								</div>
+								<img class="now-playing" src="static/examples/blue-playlist/img/now-playing.svg"/>
+							</div>
+							<div class="song-meta-data">
+								<span class="song-title">First Snow</span>
+								<span class="song-artist">Emancipator</span>
+							</div>
+							<a href="https://emancipator.bandcamp.com" class="bandcamp-link" target="_blank">
+								<img class="bandcamp-grey" src="static/examples/blue-playlist/img/bandcamp-grey.svg"/>
+								<img class="bandcamp-white" src="static/examples/blue-playlist/img/bandcamp-white.svg"/>
+							</a>
+							<span class="song-duration">5:12</span>
+						</div>
+						<div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="5">
+							<div class="song-now-playing-icon-container">
+								<div class="play-button-container">
+
+								</div>
+								<img class="now-playing" src="static/examples/blue-playlist/img/now-playing.svg"/>
+							</div>
+							<div class="song-meta-data">
+								<span class="song-title">Terrain</span>
+								<span class="song-artist">pg.lost</span>
+							</div>
+							<a href="https://pglost.bandcamp.com/track/terrain" class="bandcamp-link" target="_blank">
+								<img class="bandcamp-grey" src="static/examples/blue-playlist/img/bandcamp-grey.svg"/>
+								<img class="bandcamp-white" src="static/examples/blue-playlist/img/bandcamp-white.svg"/>
+							</a>
+							<span class="song-duration">5:29</span>
+						</div>
+						<div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="6">
+							<div class="song-now-playing-icon-container">
+								<div class="play-button-container">
+
+								</div>
+								<img class="now-playing" src="static/examples/blue-playlist/img/now-playing.svg"/>
+							</div>
+							<div class="song-meta-data">
+								<span class="song-title">Vorel</span>
+								<span class="song-artist">Russian Circles</span>
+							</div>
+							<a href="https://russiancircles.bandcamp.com/track/vorel" class="bandcamp-link" target="_blank">
+								<img class="bandcamp-grey" src="static/examples/blue-playlist/img/bandcamp-grey.svg"/>
+								<img class="bandcamp-white" src="static/examples/blue-playlist/img/bandcamp-white.svg"/>
+							</a>
+							<span class="song-duration">5:29</span>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	
+	var str = decodeURIComponent(window.location.search);
+	var res = str.slice(12,str.length-2);
+	var res1=res.split(",");
+	
+	var a1;
+	var a2;
+	
+	
+	if(res1.length==2)
+	{
+		window.alert("emotion1 is "+ res1[0] +" , emotion2" + res1[1]);
+		a1=res1[0];
+		a2=res1[1];
+	}
+	else
+	{
+	
+		window.alert("emotion is "+res1[0]);
+		
+		a1=res1[0];
+	}
+	
+	
+	
+	if(res1[0]=="'sad'")
+	{
+	
+	
+		Amplitude.init
+		(
+		{
+			"songs": [
+				
+				{
+					"name": "Tum Bin",
+					"artist": "Shreya Ghoshal",
+					"album": "Tum Bin",
+					"url": "static/examples/songs/sad/tumbin.mp3",
+					"cover_art_url": "static/examples/album-art/sad/tumbin.jpg"
+				},
+				{
+					"name": "Tum Hi Ho",
+					"artist": "Arijit Singh",
+					"album": "Aashiqui 2",
+					"url": "static/examples/songs/sad/tum hi ho.mp3",
+					"cover_art_url": "static/examples/album-art/sad/tum hi ho.jpg"
+				},
+				{
+					"name": "Judaai",
+					"artist": "Arijit Singh",
+					"album": "Badlapur",
+					"url": "static/examples/songs/sad/judai.mp3",
+					"cover_art_url": "static/examples/album-art/sad/judai.jpg"
+				},
+				{
+					"name": "Bin Tere",
+					"artist": "Vishal-Shekhar",
+					"album": "I HAte Luv Storys",
+					"url": "static/examples/songs/sad/bin tere.mp3",
+					"cover_art_url": "static/examples/album-art/sad/bin tere.jpg"
+				},
+				{
+					"name": "Channa Mereya",
+					"artist": "Arijit Singh",
+					"album": "Ae Dil Hai Mushkil",
+					"url": "static/examples/songs/sad/channa.mp3",
+					"cover_art_url": "static/examples/album-art/sad/channa.jpg"
+				},
+				{
+					"name": "Hamdard",
+					"artist": "Arijit Singh",
+					"album": "Ek Villian",
+					"url": "static/examples/songs/sad/hamdard.mp3",
+					"cover_art_url": "static/examples/album-art/sad/hamdard.jpg"
+				}
+			]
+		}
+		);
+		
+	}
+	
+	
+	if(res1[0]=="'happy'")
+	
+	{
+	
+	
+		Amplitude.init
+		(
+		{
+			"songs": 
+			[
+			
+				{
+					"name": "Char Botal Vodka",
+					"artist": "Honey Singh",
+					"album": "Bottle",
+					"url": "static/examples/songs/happy/char.mp3",
+					"cover_art_url": "static/examples/album-art/happy/char.jpg"
+				},
+				{
+					"name": "Backbone",
+					"artist": "Hardy Sindhu",
+					"album": "Backbone",
+					"url": "static/examples/songs/happy/backbone.mp3",
+					"cover_art_url": "static/examples/album-art/happy/backbone.jpg"
+				},
+				{
+					"name": "The Humma Song",
+					"artist": "AR Rehman",
+					"album": "OK Jaanu",
+					"url": "static/examples/songs/happy/humma.mp3",
+					"cover_art_url": "static/examples/album-art/happy/humma.jpg"
+				},
+				{
+					"name": "Perfect",
+					"artist": "Ed-Sheeran",
+					"album": "Perfect",
+					"url": "static/examples/songs/happy/perfect.mp3",
+					"cover_art_url": "static/examples/album-art/happy/perfect.jpg"
+				},
+				{
+					"name": "Sugar",
+					"artist": "Maroon-5",
+					"album": "Maroon-5",
+					"url": "static/examples/songs/happy/sugar.mp3",
+					"cover_art_url": "static/examples/album-art/happy/sugar.jpg"
+				},
+				{
+					"name": "Something Just Like This",
+					"artist": "Coldppay",
+					"album": "Coldplay",
+					"url": "static/examples/songs/happy/something.mp3",
+					"cover_art_url": "static/examples/album-art/happy/something.jpg"
+				},
+				{
+					"name": "Nashe Si Chadh Gyi",
+					"artist": "Arijit Singh",
+					"album": "Befikre",
+					"url": "static/examples/songs/happy/nashe.mp3",
+					"cover_art_url": "static/examples/album-art/happy/nashe.jpg"
+				}
+			]
+		}
+		);
+		
+	}
+	
+	if(res1[0]=="'neutral'")
+	{
+	Amplitude.init
+		(
+		{
+			"songs": 
+			[
+				
+				{
+					"name": "Dil Ibadat",
+					"artist": "Arijit Singh",
+					"album": "Tum Mile",
+					"url": "static/examples/songs/neutral/Dil.mp3",
+					"cover_art_url": "static/examples/album-art/neutral/Dil.jpg"
+				},
+				{
+					"name": "Kal hoo Naa Ho",
+					"artist": "Sonu Nigam",
+					"album": "Kal Ho Naa Hoo",
+					"url": "static/examples/songs/neutral/kal_ho.mp3",
+					"cover_art_url": "static/examples/album-art/neutral/kal_ho.jpg"
+				},
+				
+				{
+					"name": "Nazm-Nazm",
+					"artist": "Arko",
+					"album": "Bareily-Ki-Barfi",
+					"url": "static/examples/songs/neutral/Nazm.mp3",
+					"cover_art_url": "static/examples/album-art/neutral/nazm nazm.jpg"
+				},
+				{
+					"name": "Chhukar Mere Mann Ko",
+					"artist": "Irfan Khan",
+					"album": "Unwind-Mix",
+					"url": "static/examples/songs/neutral/Chhukar.mp3",
+					"cover_art_url": "static/examples/album-art/neutral/chhukar.jpg"
+				}
+				
+			]
+		}
+		);
+		
+	}
+
+	
+	if(res1[0]=="'angry'")
+	{
+	Amplitude.init
+		(
+		{
+			"songs": 
+			[
+				
+				{
+					"name": "boss",
+					"artist": "akhil",
+					"album": "fifth harmony",
+					"url": "static/examples/songs/angry/boss.mp3",
+					"cover_art_url": "static/examples/album-art/angry/boss.jpg"
+				},
+				{
+					"name": "roar",
+					"artist": "manas",
+					"album": "roar",
+					"url": "static/examples/songs/angry/roar.mp3",
+					"cover_art_url": "static/examples/album-art/angry/roar.jpg"
+				}
+				
+			]
+		}
+		);
+		
+	}
+
+
+	if(res1[0]=="'fear'")
+	{
+	Amplitude.init
+		(
+		{
+			"songs": 
+			[
+				
+				{
+					"name": "Tu Jo Mila",
+					"artist": "wapfast",
+					"album": "Bajrangi Bhaijaan",
+					"url": "static/examples/songs/fear/tu.mp3",
+					"cover_art_url": "static/examples/album-art/fear/tu.jpg"
+				},
+				{
+					"name": "Hamdard",
+					"artist": "Arjit Singh",
+					"album": "ek villain",
+					"url": "static/examples/songs/fear/Hamdard.mp3",
+					"cover_art_url": "static/examples/album-art/fear/Hamdard.jpg"
+				},
+				{
+				"name": "Aayat",
+					"artist": "Arjit Singh",
+					"album": "Bajirao Mastani",
+					"url": "static/examples/songs/fear/ayat.mp3",
+					"cover_art_url": "static/examples/album-art/fear/ayat.jpg"
+				},
+				{
+				"name": "Ashq na ho",
+					"artist": "Arjit Singh",
+					"album": "Holiday",
+					"url": "static/examples/songs/fear/Ashq.mp3",
+					"cover_art_url": "static/examples/album-art/fear/ashq.jpg"
+				},
+			]
+		}
+		);
+		
+	}
+
+
+	
+
+	</script>
+    </html>

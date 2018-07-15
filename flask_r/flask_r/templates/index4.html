@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post an Image test</title>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</head><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<style>
+    /* mirror the image */
+    video, canvas {
+    transform: scale(-1, 1); /*For Firefox (& IE) */
+    -webkit-transform: scale(-1, 1); /*for Chrome & Opera (& Safari) */
+}
+</style>
+<body>
+<video id="myVideo" autoplay></video>
+<br>
+
+<button onclick="myFunction()" type="button" class="btn btn-info btn-lg" style="margin-left:33%;">Capture Face</button>
+
+<script>
+
+	function function2(var2)
+	{
+	let formdata1 = new FormData();
+     formdata1.append("output", var2);
+	 let xhr1 = new XMLHttpRequest();
+        xhr1.onload = function () 
+		{
+            if (this.status === 200)
+                window.alert(this.response);
+				
+			else
+                console.error(xhr);
+        };
+		xhr1.open('POST', 'http://localhost:5000/index3', true);
+        xhr1.send(formdata1);
+	
+	}
+
+
+	function another_window( var1) 
+	{
+    window.location='http://localhost:5000/index8?username='+var1;
+	}
+
+
+    let v = document.getElementById("myVideo");
+
+    //create a canvas to grab an image for upload
+    let imageCanvas = document.createElement('canvas');
+    let imageCtx = imageCanvas.getContext("2d");
+
+    //Add file blob to a form and post
+    function postFile(file) {
+        let formdata = new FormData();
+        formdata.append("image", file);
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () 
+		{
+            if (this.status === 200)
+                another_window(this.response);
+				
+			else
+                console.error(xhr);
+        };
+		 xhr.open('POST', 'http://localhost:5000/image', true);
+        xhr.send(formdata);
+		
+		
+    }
+
+    //Get the image from the canvas
+    function sendImagefromCanvas() {
+
+        //Make sure the canvas is set to the current video size
+        imageCanvas.width = v.videoWidth;
+        imageCanvas.height = v.videoHeight;
+
+        imageCtx.drawImage(v, 0, 0, v.videoWidth, v.videoHeight);
+
+        //Convert the canvas to blob and post the file
+        imageCanvas.toBlob(postFile, 'image/jpeg');
+    }
+
+	
+    //Take a picture on click
+function myFunction() {
+        console.log('click');
+        sendImagefromCanvas();
+			
+    };
+
+    window.onload = function () {
+
+        //Get camera video
+        navigator.mediaDevices.getUserMedia({video: {width: 1024, height: 576}, audio: false})
+            .then(stream => {
+                v.srcObject = stream;
+            })
+            .catch(err => {
+                console.log('navigator.getUserMedia error: ', err)
+            });
+
+    };
+
+</script>
+</body>
+</html>

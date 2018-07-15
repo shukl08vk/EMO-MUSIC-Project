@@ -1,0 +1,30 @@
+
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="plugin/css/style.css">
+    <link rel="stylesheet" type="text/css" href="demo/css/demo.css">
+    <script type="text/javascript" src="demo/js/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="plugin/jquery-jplayer/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="plugin/ttw-music-player-min.js"></script>
+    <script type="text/javascript" src="demo/js/myplaylist.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tortor nisi. Aenean sodales diam ac lacus elementum scelerisque. Suspendisse a dui vitae lacus faucibus venenatis vel id nisl. Proin orci ante, ultricies nec interdum at, iaculis venenatis nulla. ';
+
+            $('body').ttwMusicPlayer(myPlaylist1, {
+                autoPlay:false, 
+                description:description,
+                jPlayer:{
+                    swfPath:'plugin/jquery-jplayer' 
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="title"></div>
+</body>
+</html>

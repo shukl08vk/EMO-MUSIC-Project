@@ -1,0 +1,3 @@
+graft flask_r/templates
+graft flask_r/static
+include flask_r/schema.sql
